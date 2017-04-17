@@ -1,0 +1,52 @@
+title: Wiki
+host: 'http://localhost'
+port: 3000
+paths:
+  repo: ./repo
+  data: ./data
+uploads:
+  maxImageFileSize: 3
+  maxOtherFileSize: 100
+lang: en
+public: false
+auth:
+  local:
+    enabled: true
+  google:
+    enabled: true
+    clientId: GOOGLE_CLIENT_ID
+    clientSecret: GOOGLE_CLIENT_SECRET
+  microsoft:
+    enabled: true
+    clientId: MS_APP_ID
+    clientSecret: MS_APP_SECRET
+  facebook:
+    enabled: false
+    clientId: FACEBOOK_APP_ID
+    clientSecret: FACEBOOK_APP_SECRET
+  github:
+    enabled: false
+    clientId: GITHUB_CLIENT_ID
+    clientSecret: GITHUB_CLIENT_SECRET
+  slack:
+    enabled: false
+    clientId: SLACK_CLIENT_ID
+    clientSecret: SLACK_CLIENT_SECRET
+  ldap:
+    enabled: false
+    url: 'ldap://serverhost:389'
+    bindDn: cn='root'
+    bindCredentials: BIND_PASSWORD
+    searchBase: 'o=users,o=example.com'
+    searchFilter: '(uid={{username}})'
+    tlsEnabled: false
+    tlsCertPath: 'C:\example\root_ca_cert.crt'
+sessionSecret: 2e9864a573de45ff7ecdefe6639712dc9e5d4cbf2a9b438a544def69de1a09a3
+db: 'mongodb://localhost:27017/wiki'
+git: false
+externalLogging:
+  bugsnag: false
+  loggly: false
+  papertrail: false
+  rollbar: false
+  sentry: false

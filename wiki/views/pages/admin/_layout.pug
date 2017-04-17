@@ -1,0 +1,57 @@
+extends ../../layout.pug
+
+block rootNavCenter
+  h2.nav-item Account
+
+block rootNavRight
+  i.nav-item#notifload
+  .nav-item
+    a.button.btn-edit-discard(href='/')
+      i.icon-home
+      span Home
+
+block content
+
+  #page-type-account
+    .container.is-fluid
+      .columns.is-gapless
+
+        .column.is-narrow.is-hidden-touch.sidebar
+
+          aside
+            .sidebar-label
+              span Navigation
+            ul.sidebar-menu
+              li
+                a(href='/')
+                  i.icon-home
+                  span Home
+
+          aside
+            .sidebar-label
+              span Account
+            ul.sidebar-menu
+              li
+                a(href='/admin/profile')
+                  i.icon-user
+                  span My Profile
+              li
+                a(href='/admin/stats')
+                  i.icon-bar-graph-2
+                  span Stats
+              if rights.manage
+                li
+                  a(href='/admin/users')
+                    i.icon-users
+                    span Users
+                li
+                  a(href='/admin/settings')
+                    i.icon-cog
+                    span System Settings
+              li
+                a(href='/logout')
+                  i.icon-delete2
+                  span Logout
+
+        .column
+          block adminContent

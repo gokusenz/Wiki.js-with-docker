@@ -1,0 +1,137 @@
+#######################################################################
+# Wiki.js - CONFIGURATION                                             #
+#######################################################################
+# Full explanation + examples in the documentation:
+# https://wiki.requarks.io/install
+
+# ---------------------------------------------------------------------
+# Title of this site
+# ---------------------------------------------------------------------
+
+title: Wiki
+
+# ---------------------------------------------------------------------
+# Full public path to the site, without the trailing slash
+# ---------------------------------------------------------------------
+
+host: http://localhost
+
+# ---------------------------------------------------------------------
+# Port the main server should listen to (80 by default)
+# ---------------------------------------------------------------------
+# To use process.env.PORT, comment the line below:
+
+port: 80
+
+# ---------------------------------------------------------------------
+# Data Directories
+# ---------------------------------------------------------------------
+
+paths:
+  repo: ./repo
+  data: ./data
+
+# ---------------------------------------------------------------------
+# Upload Limits
+# ---------------------------------------------------------------------
+# In megabytes (MB)
+
+uploads:
+  maxImageFileSize: 3
+  maxOtherFileSize: 100
+
+# ---------------------------------------------------------------------
+# Site Language
+# ---------------------------------------------------------------------
+# Possible values: en, fr
+
+lang: en
+
+# ---------------------------------------------------------------------
+# Site Authentication
+# ---------------------------------------------------------------------
+
+public: false
+
+auth:
+  local:
+    enabled: true
+  google:
+    enabled: true
+    clientId: GOOGLE_CLIENT_ID
+    clientSecret: GOOGLE_CLIENT_SECRET
+  microsoft:
+    enabled: true
+    clientId: MS_APP_ID
+    clientSecret: MS_APP_SECRET
+  facebook:
+    enabled: false
+    clientId: FACEBOOK_APP_ID
+    clientSecret: FACEBOOK_APP_SECRET
+  github:
+    enabled: false
+    clientId: GITHUB_CLIENT_ID
+    clientSecret: GITHUB_CLIENT_SECRET
+  slack:
+    enabled: false
+    clientId: SLACK_CLIENT_ID
+    clientSecret: SLACK_CLIENT_SECRET
+  ldap:
+    enabled: false
+    url: ldap://serverhost:389
+    bindDn: cn='root'
+    bindCredentials: BIND_PASSWORD
+    searchBase: o=users,o=example.com
+    searchFilter: (uid={{username}})
+    tlsEnabled: false
+    tlsCertPath: C:\example\root_ca_cert.crt
+
+# ---------------------------------------------------------------------
+# Secret key to use when encrypting sessions
+# ---------------------------------------------------------------------
+# Use a long and unique random string (256-bit keys are perfect!)
+
+sessionSecret: 1234567890abcdefghijklmnopqrstuvxyz
+
+# ---------------------------------------------------------------------
+# Database Connection String
+# ---------------------------------------------------------------------
+# You can also use an ENV variable by using $ENV_VAR_NAME as the value
+
+db: mongodb://localhost:27017/wiki
+
+# ---------------------------------------------------------------------
+# Git Connection Info
+# ---------------------------------------------------------------------
+
+git:
+  url: https://github.com/Organization/Repo
+  branch: master
+  auth:
+
+    # Type: basic or ssh
+    type: ssh
+
+    # Only for Basic authentication:
+    username: marty
+    password: MartyMcFly88
+
+    # Only for SSH authentication:
+    privateKey: /etc/wiki/keys/git.pem
+
+    sslVerify: true
+  signature:
+    name: Marty
+    email: marty@example.com
+
+# ---------------------------------------------------------------------
+# External Logging
+# ---------------------------------------------------------------------
+
+externalLogging:
+  bugsnag: false
+  loggly: false
+  papertrail: false
+  rollbar: false
+  sentry: false
+
