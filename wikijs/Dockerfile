@@ -1,6 +1,6 @@
 FROM base/archlinux:latest
 
-ENV DOWNLOAD_URL https://github.com/Requarks/wiki/releases/download/v1.0.0-beta.9/wiki-js.tar.gz
+ENV DOWNLOAD_URL https://github.com/Requarks/wiki/releases/download/v1.0.0-beta.10/wiki-js.tar.gz
 
 RUN \
 	pacman -Sy \
@@ -18,5 +18,7 @@ RUN \
 
 WORKDIR /var/www/wiki
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 EXPOSE 80
-CMD ["node", "server.js"]
+CMD ["/entrypoint.sh"]

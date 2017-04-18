@@ -16,7 +16,6 @@ services:
             context: ./wikijs
         stdin_open: true
         tty: true
-        command: sleep 100000
         volumes:
             - ./data/data:/var/www/wiki/data
             - ./data/repo:/var/www/wiki/repo
