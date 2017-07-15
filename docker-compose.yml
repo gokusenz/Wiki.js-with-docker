@@ -12,15 +12,11 @@ services:
         volumes:
              - ./data/mongo:/data/db
     wiki-js:
-        build:
-            context: ./wikijs
-        stdin_open: true
-        tty: true
+        image: 'requarks/wiki:latest'
         volumes:
-            - ./data/data:/var/www/wiki/data
-            - ./data/repo:/var/www/wiki/repo
-            - ./data/keys:/etc/wiki/keys
-            - ./data/config.yml:/var/www/wiki/config.yml
+            - ./data/data:/usr/src/app/data
+            - ./data/repo:/usr/src/app/repo
+            - ./data/config.yml:/usr/src/app/config.yml
         links:
             - wiki-mongo:mongo
         ports:
@@ -28,3 +24,5 @@ services:
             - "80:80"
         expose: 
             - "80"
+        environment:
+            - PORT=3000

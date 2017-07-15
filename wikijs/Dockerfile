@@ -1,6 +1,6 @@
 FROM base/archlinux:latest
 
-ENV DOWNLOAD_URL https://github.com/Requarks/wiki/releases/download/v1.0.0-beta.10/wiki-js.tar.gz
+ENV DOWNLOAD_URL https://github.com/Requarks/wiki/releases/download/v1.0.0-beta.13/wiki-js.tar.gz
 
 RUN \
 	pacman -Sy \
