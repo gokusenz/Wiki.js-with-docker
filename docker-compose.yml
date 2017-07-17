@@ -12,7 +12,7 @@ services:
         volumes:
              - ./data/mongo:/data/db
     wiki-js:
-        image: 'requarks/wiki:latest'
+        image: 'wikijs:latest'
         volumes:
             - ./data/data:/usr/src/app/data
             - ./data/repo:/usr/src/app/repo
