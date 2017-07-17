@@ -1,0 +1,14 @@
+{
+  "modal": {
+    "move": "이동"
+  },
+  "nav": {
+    "home": "홈으로"
+  },
+  "search": {
+    "didyoumean": "혹시 이런 의미였습니까?",
+    "nomatch": "검색어와 일치하는 결과가 없습니다.",
+    "placeholder": "검색",
+    "results": "검색 결과"
+  }
+}

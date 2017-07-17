@@ -1,0 +1,15 @@
+version: '3'
+services:
+  wiki-mongo:
+    image: mongo:3.2
+    ports:
+      - '27017:27017'
+    command: '--smallfiles --logpath=/dev/null'
+  wikijs:
+    image: 'wikijs:latest'
+    links:
+      - wiki-mongo
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
