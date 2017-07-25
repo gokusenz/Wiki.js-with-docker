@@ -1,4 +1,4 @@
-# Wiki.js with Docker
+# Wiki.js with Docker [Beta 13]
 
 ## install packages & build docker image
 `cd wiki-beta13`
