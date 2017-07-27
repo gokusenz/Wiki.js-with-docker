@@ -8,3 +8,5 @@
 `npm build`
 
 `docker build -t wikijs:beta-13 .`
+
+`docker-compose up`
